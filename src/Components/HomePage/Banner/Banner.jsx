@@ -57,13 +57,13 @@ const Banner = () => {
           ))}
         </Swiper>
 
-        <div className="bg-[#0b003180] absolute top-0 h-full w-full z-1 flex items-center justify-center text-white rounded-xl px-2">
+        <div className="bg-[#06001a90] absolute top-0 h-full w-full z-1 flex items-center justify-center text-white rounded-xl px-2">
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="font-bold text-3xl md:text-[38px]">
                 Elevate Every Space with Premium Tiles
               </h2>
-              <p className="max-w-130 mx-auto">
+              <p className="max-w-130 text-[17px] mx-auto">
                 Discover timeless designs crafted for modern living. Durable,
                 stylish, and built to last for every corner of your home. Where
                 quality meets elegance.
