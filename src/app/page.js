@@ -1,6 +1,10 @@
+import Banner from "@/Components/HomePage/Banner/Banner";
+
 const HomePage = () => {
   return (
-    <div>
+    <div className="my-12 md:my-20">
+      <Banner></Banner>
+
       <h2>Home Page</h2>
     </div>
   );

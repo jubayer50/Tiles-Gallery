@@ -1,6 +1,7 @@
 import { Geist, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Share/Navbar/Navbar";
+import Footer from "@/Components/Share/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar></Navbar>
 
-        <main>{children}</main>
+        <main className="max-w-310 mx-auto">{children}</main>
+
+        <Footer></Footer>
       </body>
     </html>
   );
