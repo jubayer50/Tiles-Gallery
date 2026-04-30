@@ -15,16 +15,16 @@ const HomePage = async () => {
         <div className=" text-center space-y-2">
           <h2 className="font-bold text-2xl">Featured Tiles</h2>
 
-          <div className="bg-gray-50 p-3 flex items-center gap-2 ">
-            <Button className={"rounded-none bg-[#FF653F]"}>
+          <div className="bg-gray-100 py-2 px-2 flex items-center gap-1 ">
+            <Button className={"rounded-none px-2 md:px-4 bg-[#FF653F]"}>
               New Arrivals
             </Button>
 
-            <div className="max-w-290 mx-auto">
+            <div className="max-w-62.5 md:max-w-290 text-left mx-auto">
               <Marquee pauseOnHover speed={35} className="">
                 {tiles.slice(0, 4).map((tile) => (
                   <div key={tile.id} className="">
-                    <span className="mr-3 pr-2">
+                    <span className="">
                       {tile.title} | Weekly Feature: Modern Geometric Patterns |
                       Join the Community...
                     </span>
