@@ -8,8 +8,8 @@ const TilesCard = ({ tile }) => {
         <Image
           src={tile.image}
           alt={tile.title}
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="rounded-lg object-cover w-full aspect-square"
         ></Image>
 
@@ -18,12 +18,21 @@ const TilesCard = ({ tile }) => {
         </Chip>
       </div>
 
-      <div className=" mt-2 space-y-2">
-        <Card.Header className=" space-y-2">
+      <div className=" mt-2 space-y-3">
+        <Card.Header className=" space-y-3">
           <Card.Title className="font-bold text-lg hover:text-[#FF653F]">
             {tile.title}
           </Card.Title>
-          <Card.Description></Card.Description>
+          <Card.Description className="line-clamp-2">
+            {tile.description}
+          </Card.Description>
+
+          <p>Dimensions: {tile.dimensions}</p>
+
+          <div className="flex items-center justify-between">
+            <p>Material: {tile.material}</p>
+            <p className="text-[#FF653F] font-semibold">Price: ${tile.price}</p>
+          </div>
         </Card.Header>
 
         <Card.Footer className="">
