@@ -57,7 +57,7 @@ const Banner = () => {
           ))}
         </Swiper>
 
-        <div className="bg-[#06001a90] absolute top-0 h-full w-full z-1 flex items-center justify-center text-white rounded-xl px-2">
+        <div className="bg-[#06001a82] absolute top-0 h-full w-full z-1 flex items-center justify-center text-white rounded-xl px-2">
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="font-bold text-3xl md:text-[38px]">

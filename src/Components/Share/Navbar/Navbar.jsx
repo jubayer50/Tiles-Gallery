@@ -68,7 +68,7 @@ const Navbar = () => {
         <div>
           <Link href={"/signin"}>
             <Button className="bg-[#FF653F] font-semibold text-[17px] px-5">
-              LogIn
+              Sign In
             </Button>
           </Link>
         </div>

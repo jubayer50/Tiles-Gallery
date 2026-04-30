@@ -9,15 +9,15 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import Link from "next/link";
+
 import { FaGoogle } from "react-icons/fa";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const fromData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fromData.entries());
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
   };
 
   return (
@@ -28,9 +28,21 @@ const SignInPage = () => {
       >
         <h2 className="text-center font-bold text-2xl mb-5">Sign In</h2>
 
+        <TextField isRequired name="name" type="text">
+          <Label>Name</Label>
+          <Input placeholder="Enter Your Name." />
+          <FieldError />
+        </TextField>
+
         <TextField isRequired name="email" type="email">
           <Label>Email</Label>
           <Input placeholder="Enter Your Email." />
+          <FieldError />
+        </TextField>
+
+        <TextField name="image" type="text">
+          <Label>Image</Label>
+          <Input placeholder="Enter Your Image URL." />
           <FieldError />
         </TextField>
 
@@ -45,23 +57,16 @@ const SignInPage = () => {
 
         <div className="mt-4 flex flex-col gap-2">
           <Button className={"w-full"} type="submit">
-            Sign In
+            Sign Up
           </Button>
 
           <Button className={"w-full"}>
-            <FaGoogle /> Sign In with Google
+            <FaGoogle /> Sign Up with Google
           </Button>
-        </div>
-
-        <div className="flex items-center gap-2 justify-center text-[14px]">
-          <p>If you don't have Account |</p>
-          <Link href={"/signup"}>
-            <span className="text-[#FF653F] font-bold"> Sign Up</span>
-          </Link>
         </div>
       </Form>
     </div>
   );
 };
 
-export default SignInPage;
+export default SignUpPage;
