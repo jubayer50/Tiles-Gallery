@@ -19,7 +19,7 @@ const TilesDetailPage = async ({ params }) => {
           alt={targetTiles.title}
           width={600}
           height={600}
-          className="rounded-lg object-cover h-[500px] w-full aspect-square"
+          className="rounded-lg object-cover h-125 w-full aspect-square"
         ></Image>
       </div>
 
