@@ -23,7 +23,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="sticky top-0 z-40 border-b backdrop-blur-lg">
+    <nav className="sticky top-0 z-40 border-b backdrop-blur-2xl">
       <header className="max-w-310 mx-auto flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button
@@ -67,7 +67,9 @@ const Navbar = () => {
 
         <div>
           <Link href={"/signin"}>
-            <Button className="bg-[#FF653F] font-semibold">LogIn</Button>
+            <Button className="bg-[#FF653F] font-semibold text-[17px] px-5">
+              LogIn
+            </Button>
           </Link>
         </div>
       </header>
