@@ -2,10 +2,15 @@
 
 import { useState } from "react";
 import MyNavLink from "./MyNavLink";
-import { Button } from "@heroui/react";
+import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
+  const { data, isPending } = authClient.useSession();
+
+  const user = data?.user;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = (
@@ -66,11 +71,55 @@ const Navbar = () => {
         <ul className="hidden items-center gap-5 md:flex">{links}</ul>
 
         <div>
-          <Link href={"/signin"}>
-            <Button className="bg-[#FF653F] font-semibold text-[17px] px-5">
+          {isPending ? (
+            <p className="text-[12px]">Loading...</p>
+          ) : user ? (
+            <div className="flex items-center gap-2">
+              <Avatar>
+                <Avatar.Image
+                  alt="John Doe"
+                  src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
+                />
+                <Avatar.Fallback>JD</Avatar.Fallback>
+              </Avatar>
+
+              <Button
+                onClick={async () => await authClient.signOut()}
+                className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2"
+              >
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <Link href={"/signin"}>
+              <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2">
+                Sign In
+              </Button>
+            </Link>
+          )}
+
+          {/* <Link href={"/signin"}>
+            <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2">
               Sign In
             </Button>
-          </Link>
+          </Link> */}
+
+          {/* <div className="flex items-center gap-2">
+            <Avatar>
+              <Avatar.Image
+                alt="John Doe"
+                src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
+              />
+              <Avatar.Fallback>JD</Avatar.Fallback>
+            </Avatar>
+
+            <Button
+              onClick={async () => await authClient.signOut()}
+              className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2"
+            >
+              Sign Out
+            </Button>
+          </div> */}
         </div>
       </header>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -13,11 +14,28 @@ import {
 import { FaGoogle } from "react-icons/fa";
 
 const SignUpPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
+
+    const { data: authData, error } = await authClient.signUp.email({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      image: data.image,
+      callbackURL: "/",
+    });
+
+    if (authData) {
+      alert("SignUp successful!");
+    }
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
   };
 
   return (
@@ -26,7 +44,7 @@ const SignUpPage = () => {
         className="p-10 rounded-md border bg-white space-y-5"
         onSubmit={onSubmit}
       >
-        <h2 className="text-center font-bold text-2xl mb-5">Sign In</h2>
+        <h2 className="text-center font-bold text-2xl mb-5">Sign Up</h2>
 
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>

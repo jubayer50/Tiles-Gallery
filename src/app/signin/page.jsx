@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -10,14 +11,32 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 
 const SignInPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const fromData = new FormData(e.currentTarget);
     const data = Object.fromEntries(fromData.entries());
+
+    const { data: authData, error } = await authClient.signIn.email({
+      email: data.email,
+      password: data.password,
+      callbackURL: "/",
+    });
+
+    if (authData) {
+      alert("SignIn Successful!");
+    }
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    redirect("/");
   };
 
   return (
