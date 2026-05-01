@@ -78,6 +78,8 @@ const SignUpPage = () => {
             Sign Up
           </Button>
 
+          <p className="text-center text-[14px]">Or</p>
+
           <Button className={"w-full"}>
             <FaGoogle /> Sign Up with Google
           </Button>

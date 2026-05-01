@@ -73,6 +73,8 @@ const SignInPage = () => {
             Sign In
           </Button>
 
+          <p className="text-center text-[14px]">Or</p>
+
           <Button onClick={handleGoogleLogIn} className={"w-full"}>
             <FaGoogle /> Sign In with Google
           </Button>
