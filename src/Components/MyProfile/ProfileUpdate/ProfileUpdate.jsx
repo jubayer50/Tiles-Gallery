@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Person, PencilToSquare } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 
@@ -9,6 +10,11 @@ const ProfileUpdate = () => {
 
     const fromData = new FormData(e.currentTarget);
     const data = Object.fromEntries(fromData.entries());
+
+    await authClient.updateUser({
+      image: data.image,
+      name: data.name,
+    });
   };
 
   return (
