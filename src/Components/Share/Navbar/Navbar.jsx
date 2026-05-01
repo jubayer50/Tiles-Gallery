@@ -77,49 +77,27 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Avatar>
                 <Avatar.Image
-                  alt="John Doe"
-                  src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
+                  alt={user?.name}
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
                 />
-                <Avatar.Fallback>JD</Avatar.Fallback>
+                <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
               </Avatar>
 
               <Button
                 onClick={async () => await authClient.signOut()}
-                className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2"
+                className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-4 md:py-5"
               >
                 Sign Out
               </Button>
             </div>
           ) : (
             <Link href={"/signin"}>
-              <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2">
+              <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-4 md:py-5">
                 Sign In
               </Button>
             </Link>
           )}
-
-          {/* <Link href={"/signin"}>
-            <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2">
-              Sign In
-            </Button>
-          </Link> */}
-
-          {/* <div className="flex items-center gap-2">
-            <Avatar>
-              <Avatar.Image
-                alt="John Doe"
-                src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3"
-              />
-              <Avatar.Fallback>JD</Avatar.Fallback>
-            </Avatar>
-
-            <Button
-              onClick={async () => await authClient.signOut()}
-              className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-5 md:py-2"
-            >
-              Sign Out
-            </Button>
-          </div> */}
         </div>
       </header>
 

@@ -39,6 +39,12 @@ const SignInPage = () => {
     redirect("/");
   };
 
+  const handleGoogleLogIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="my-15 md:my-25 flex justify-center items-center px-2">
       <Form
@@ -67,7 +73,7 @@ const SignInPage = () => {
             Sign In
           </Button>
 
-          <Button className={"w-full"}>
+          <Button onClick={handleGoogleLogIn} className={"w-full"}>
             <FaGoogle /> Sign In with Google
           </Button>
         </div>
