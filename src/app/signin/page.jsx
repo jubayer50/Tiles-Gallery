@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const onSubmit = async (e) => {
@@ -28,11 +29,11 @@ const SignInPage = () => {
     });
 
     if (authData) {
-      alert("SignIn Successful!");
+      toast.success("SignIn Successful!");
     }
 
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
       return;
     }
 

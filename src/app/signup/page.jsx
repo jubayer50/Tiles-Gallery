@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const onSubmit = async (e) => {
@@ -29,11 +30,11 @@ const SignUpPage = () => {
     });
 
     if (authData) {
-      alert("SignUp successful!");
+      toast.success("SignUp successful!");
     }
 
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
       return;
     }
   };

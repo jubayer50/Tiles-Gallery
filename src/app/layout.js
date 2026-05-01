@@ -2,11 +2,7 @@ import { Geist, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Share/Navbar/Navbar";
 import Footer from "@/Components/Share/Footer/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import ToastProvider from "@/Components/ToastProvider/ToastProvider";
 
 const manrope = Manrope({
   variable: "manrope",
@@ -25,6 +21,8 @@ export default function RootLayout({ children }) {
         <Navbar></Navbar>
 
         <main className="max-w-310 mx-auto">{children}</main>
+
+        <ToastProvider></ToastProvider>
 
         <Footer></Footer>
       </body>
