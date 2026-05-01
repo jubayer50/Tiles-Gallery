@@ -75,7 +75,7 @@ const Navbar = () => {
             <p className="text-[12px]">Loading...</p>
           ) : user ? (
             <div className="flex items-center gap-2">
-              <Avatar>
+              <Avatar className="w-9 h-9">
                 <Avatar.Image
                   alt={user?.name}
                   src={user?.image}
@@ -86,14 +86,14 @@ const Navbar = () => {
 
               <Button
                 onClick={async () => await authClient.signOut()}
-                className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-4 md:py-5"
+                className="bg-[#FF653F] md:font-semibold px-3 py-.5  md:px-4 md:py-5"
               >
                 Sign Out
               </Button>
             </div>
           ) : (
             <Link href={"/signin"}>
-              <Button className="bg-[#FF653F] md:font-semibold md:text-[17px] px-3 py-.5  md:px-4 md:py-5">
+              <Button className="bg-[#FF653F] md:font-semibold px-3 py-.5  md:px-4 md:py-5">
                 Sign In
               </Button>
             </Link>

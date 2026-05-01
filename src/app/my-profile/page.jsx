@@ -29,12 +29,13 @@ const MyProfilePage = async () => {
               <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
             </Avatar>
 
-            <div className="mt-4">
+            <div className="mt-4 space-y-1">
               <h2 className="font-bold text-xl">{user?.name}</h2>
+              <p>{user?.email}</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center mt-4">
+          <div className="flex items-center justify-center mt-3">
             <ProfileUpdate></ProfileUpdate>
           </div>
         </Card>
