@@ -2,7 +2,6 @@ import ProfileUpdate from "@/Components/MyProfile/ProfileUpdate/ProfileUpdate";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { Avatar, Card } from "@heroui/react";
-import Image from "next/image";
 
 const MyProfilePage = async () => {
   const session = await auth.api.getSession({
