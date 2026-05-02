@@ -45,6 +45,16 @@ const SignUpPage = () => {
     }
   };
 
+  const handleGoogleLogIn = async () => {
+    const res = await authClient.signIn.social({
+      provider: "google",
+    });
+
+    if (res) {
+      router.push("/");
+    }
+  };
+
   return (
     <div className="my-15 md:my-25 flex justify-center items-center px-2">
       <Form
@@ -87,7 +97,7 @@ const SignUpPage = () => {
 
           <p className="text-center text-[14px]">Or</p>
 
-          <Button className={"w-full"}>
+          <Button onClick={handleGoogleLogIn} className={"w-full"}>
             <FaGoogle /> Sign Up with Google
           </Button>
         </div>
