@@ -61,7 +61,7 @@ const Banner = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="font-bold text-3xl md:text-[38px]">
-                Elevate Every Space with Premium Tiles
+                Discover Your Perfect Aesthetic
               </h2>
               <p className="max-w-130 text-[17px] mx-auto">
                 Discover timeless designs crafted for modern living. Durable,
