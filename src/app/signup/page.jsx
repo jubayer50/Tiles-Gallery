@@ -10,11 +10,14 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const SignUpPage = () => {
+  const router = useRouter();
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,11 +29,14 @@ const SignUpPage = () => {
       email: data.email,
       password: data.password,
       image: data.image,
-      callbackURL: "/",
     });
 
     if (authData) {
       toast.success("SignUp successful!");
+    }
+
+    if (!error) {
+      router.push("/");
     }
 
     if (error) {

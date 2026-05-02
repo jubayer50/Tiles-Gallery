@@ -36,8 +36,6 @@ const SignInPage = () => {
       toast.error(error.message);
       return;
     }
-
-    redirect("/");
   };
 
   const handleGoogleLogIn = async () => {
